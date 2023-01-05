@@ -1,10 +1,11 @@
 /*
-Blockchain written in C++
-by Andrew Sosa Guaita
+Blockchain in C++ using SHA-256 Algorithm
+    by Andrew Sosa Guaita
 
 Program implements a simple blockchain
 using 2 classes "Block" and "Blockchain"
 
+Blocks are "mined" using SHA-256 algorithm,
 
 
 

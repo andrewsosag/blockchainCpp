@@ -5,6 +5,10 @@
 #include <iomanip>
 
 /*
+Block Constructor:
+Input:
+    - Current Index of Blockchain
+    - 
 
 */
 Block::Block(int currentIndex, const string currentData) {

@@ -15,14 +15,14 @@ Block class keeps track of block data
 class Block {
 public:
     Block(int indexInput, const string dataInput); // constructor takes in block index and data
-    string prevBlockHash; // block contains hash of previous block
+    string prevBlockHash; // hash of previous block
     string getHash() { return blockHash;};
     string getTime();
     // string getMineStart() {return mineStart};
     // string getMineEnd() {return mineEnd};
     void MineBlock(int difficulty);
 private:
-    // Encapsulated Block Data
+    // Private Block Data (Should never change)
     int blockIndex;
     int blockNonce;
     string blockData;
