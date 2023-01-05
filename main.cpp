@@ -1,8 +1,14 @@
 /*
-Blockchain in C++, by Andrew Sosa Guaita
+Blockchain written in C++
+by Andrew Sosa Guaita
 
-Program uses 2 classes "Block" and "Blockchain"
-in order to implement a simple blockchain
+Program implements a simple blockchain
+using 2 classes "Block" and "Blockchain"
+
+
+
+
+Block Class:
 
 Program uses SHA256 Algorithm to encrypt block
 data
@@ -11,24 +17,22 @@ data
 #include "Blockchain.h"
 
 int main() {
-    // Amount of Blocks to Mine
-    int blocksToMine = 10;
+    int blocksToMine = 10; // number of Blocks to mine
     
     string outputCurrentBlock;
-    Blockchain bChain = Blockchain();
+    Blockchain bChain = Blockchain(); // create Blockchain object
 
-    // Mine intended amount of blocks
+    // Start mining blocks
     for (int i = 1; i <= blocksToMine; i++) {
-        // Output current block to terminal
         cout << "Mining block " << to_string(i) << "..." << endl;
-        outputCurrentBlock = "Block " + to_string(i) + " Data";
-
-        // Create new block
         Block currentBlock = Block(i, outputCurrentBlock);
-        bChain.addBlock(Block(i, outputCurrentBlock));
-        cout << "Time to Mine: " << currentBlock.getTime() << " seconds" << endl;
 
-        // Add current block to blockchain
+        // Mine new block and add to blockchain
+        bChain.addBlock(Block(i, outputCurrentBlock));
+
+        // Output Public Block Data to Terminal
+        outputCurrentBlock = "Block " + to_string(i) + " Data";
+        cout << "Time to Mine: " << currentBlock.getTime() << " seconds" << endl;
         
     }
 

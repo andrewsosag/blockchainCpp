@@ -5,6 +5,13 @@
 #include "Block.h"
 
 using namespace std;
+/*
+Blockchain Class:
+    - Creates blockchain using vector of Blocks
+    - Keeps track of mining difficulty
+    - 
+*/
+
 
 class Blockchain {
 public:
