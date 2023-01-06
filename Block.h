@@ -7,7 +7,9 @@
 using namespace std;
 /*
 Block class keeps track of block data
-    - 
+Public Block Data: 
+    - Block Index
+    - Block 
 
 
 */
@@ -22,7 +24,7 @@ public:
     // string getMineEnd() {return mineEnd};
     void MineBlock(int difficulty);
 private:
-    // Private Block Data (Should never change)
+    // Block Data (visible from blockchain, but immutable)
     int blockIndex;
     int blockNonce;
     string blockData;

@@ -5,6 +5,7 @@ Blockchain::Blockchain() {
     difficulty = 5;
 }
 
+// 
 void Blockchain::addBlock(Block current) {
     current.prevBlockHash = getLastBlock().getHash();
     
@@ -12,6 +13,7 @@ void Blockchain::addBlock(Block current) {
     chain.push_back(current);
 }
 
+// Function returns last block on Blockchain
 Block Blockchain::getLastBlock() const {
     return chain.back();
 }
