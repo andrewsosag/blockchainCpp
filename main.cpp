@@ -5,7 +5,8 @@ Blockchain in C++ using SHA-256 Algorithm
 Program implements a simple blockchain
 using 2 classes "Block" and "Blockchain"
 
-Blocks are "mined" using SHA-256 algorithm,
+Block data is encrypted using SHA-256 algorithm,
+Blocks are mined 
 
 
 

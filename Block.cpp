@@ -21,30 +21,32 @@ Block::Block(int currentIndex, const string currentData) {
 
 
 /*
+Function to mine Blocks
 
 */
-void Block::MineBlock(int difficulty) {
-    char cstr[difficulty + 1];
-    for (int i = 0; i < difficulty; ++i) {
+void Block::MineBlock(int mineDifficulty) {
+    char cstr[mineDifficulty + 1];
+    for (int i = 0; i < mineDifficulty; ++i) {
         cstr[i] = '0';
     }
-    cstr[difficulty] = '\0';
+    cstr[mineDifficulty] = '\0';
 
     string str(cstr);
 
     do {
+        // 
         blockNonce++;
         blockHash = calculateHash();
-    } while (blockHash.substr(0, difficulty) != str);
+    } while (blockHash.substr(0, mineDifficulty) != str);
 
     cout << "Block mined: " << blockHash << endl;
-    gettimeofday(&mineEnd, NULL);
+    // gettimeofday(&mineEnd, NULL);
 }
 
 
 /*  
-    CalculateHash encrypts block data with SHA256
-    through a stringstream
+    calculateHash loads block data into stringstream,
+    and returns data encrypted with SHA-256
 */
 inline string Block::calculateHash() const {
     stringstream blockData;
@@ -54,6 +56,10 @@ inline string Block::calculateHash() const {
 }
 
 
+/*
+
+
+*/
 string Block::getTime(){
     // double mineTime = double(mineEnd - mineStart) / double(CLOCKS_PER_SEC);
     // int mineTime = Block::mineEnd - Block::mineStart;
