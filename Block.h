@@ -6,17 +6,15 @@
 
 using namespace std;
 /*
-Block class keeps track of block data
-Public Block Data: 
-    - Block Index
-    - Block 
-
-
+Block Class
+    - contains immutable block data
+    - contains function for encryption with SHA-256
+    - contains function for mining blocks with Proof of Work
 */
 
 class Block {
 public:
-    Block(int indexInput, const string dataInput); // constructor takes in block index and data
+    Block(int indexInput, const string dataInput); // constructor
     string prevBlockHash; // hash of previous block
     string getHash() { return blockHash;};
     string getTime();

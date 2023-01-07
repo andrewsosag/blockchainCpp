@@ -1,26 +1,25 @@
 #include "Blockchain.h"
 
-/*
-Blockchain Constructor:
-    - Places first block in first position
-    - Sets starting mining difficulty
-*/
+
+// Blockchain Constructor
 Blockchain::Blockchain() {
-    chain.__emplace_back(Block(0, "Genesis Block"));
-    mineDifficulty = 5;
+    chain.__emplace_back(Block(0, "Genesis Block")); // place first block in first position
+    mineDifficulty = 5; // set starting mining difficulty
 }
 
 /*
 Function adds new Blocks to Blockchain
-    - Retrieves 
+    - Stores hash of previous block in new Block
+    - Mines new block using Proof of Work
+    - Adds new Block to end of Blockchain
 */
 void Blockchain::addBlock(Block current) {
-    current.prevBlockHash = getLastBlock().getHash();
-    current.MineBlock(mineDifficulty);
-    chain.push_back(current);
+    current.prevBlockHash = getLastBlock().getHash(); // store previous hash in new Block
+    current.MineBlock(mineDifficulty); // mine new Block using Proof of Work
+    chain.push_back(current); // add new Block to end of Blockchain
 }
 
-// Function returns last block on Blockchain
+// Function returns latest Block on Blockchain
 Block Blockchain::getLastBlock() const {
     return chain.back();
 }
