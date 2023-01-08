@@ -1,5 +1,5 @@
-blockchain: main.o Block.o Blockchain.o sha256.o
-	g++ main.o Block.o Blockchain.o sha256.o -o blockchain -lstdc++ -std=c++11 -stdlib=libc++ -x c++ 
+startMining: main.o Block.o Blockchain.o sha256.o
+	g++ main.o Block.o Blockchain.o sha256.o -o startMining
 
 main.o: main.cpp
 	g++ -c main.cpp

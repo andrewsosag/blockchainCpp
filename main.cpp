@@ -1,5 +1,5 @@
 /*
-Blockchain in C++ using SHA-256 Algorithm
+Blockchain in C++ using Proof of Work
     by Andrew Sosa Guaita
 
 Program implements a simple blockchain
