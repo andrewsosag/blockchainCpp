@@ -25,4 +25,16 @@ the terminal (such as the hash of the block, and how long the mining process too
 3. Process will repeat for the desired amount of blocks
 
 ## How it Works
-1. 
+
+A blockchain is a decentralized, digital ledger that uses cryptography to secure its data. In a simple blockchain, each block contains a unique hash value that distinguishes it from other blocks in the chain.
+
+To create a new block
+
+1. A Blockchain is dynamically created using a vector of blocks, the mining difficulty is also set. These are made private so they are immutable.
+```c++
+class Blockchain{
+private:
+    int mineDifficulty;
+    vector<Block> chain;
+}
+```
