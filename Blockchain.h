@@ -10,7 +10,6 @@ using namespace std;
 Blockchain Class:
     - Constructs blockchain using immutable vector of Blocks
     - Keeps track of increasing mining mineDifficulty
-    // IMPLEMENT FUNCTIONS FOR RETRIEVING PUBLIC BLOCK DATA
 */
 class Blockchain {
 public:
@@ -18,7 +17,6 @@ public:
     Blockchain(); // constructor
     void addBlock(Block); // function to add new blocks to blockchain
     Block getLastBlock() const; // function retrieves last block in blockchain
-    // function that calculates time to mine each block
 
 private:
     // Immutable Blockchain Data

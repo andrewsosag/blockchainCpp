@@ -6,14 +6,6 @@ Program implements a simple blockchain
 using 2 classes "Block" and "Blockchain"
 
 Block data is encrypted using SHA-256 algorithm,
-Blocks are mined 
-
-
-
-Block Class:
-
-Program uses SHA256 Algorithm to encrypt block
-data
 */
 
 #include "Blockchain.h"
@@ -34,7 +26,6 @@ int main() {
 
         // Output Public Block Data to Terminal
         outputCurrentBlock = "Block " + to_string(i) + " Data";
-        cout << "Time to Mine: " << currentBlock.getTime() << " seconds" << endl;
         
     }
 

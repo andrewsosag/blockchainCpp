@@ -16,7 +16,6 @@ Block::Block(int currentIndex, const string currentData) {
     blockData = currentData;
     blockNonce = -1; // set starting nonce
     blockTime = time(nullptr); // record time of block creation
-    gettimeofday(&mineStart, NULL);
 }
 
 
@@ -47,7 +46,6 @@ void Block::MineBlock(int mineDifficulty) {
 
     // Output publicly hash of new block
     cout << "Block mined: " << blockHash << endl;
-    // gettimeofday(&mineEnd, NULL);
 }
 
 
@@ -60,20 +58,4 @@ inline string Block::calculateHash() const {
     blockData << blockIndex << blockTime << blockData << blockNonce << prevBlockHash;
 
     return sha256(blockData.str());
-}
-
-
-/*
-
-
-*/
-string Block::getTime(){
-    // double mineTime = double(mineEnd - mineStart) / double(CLOCKS_PER_SEC);
-    // int mineTime = Block::mineEnd - Block::mineStart;
-    double mineTime = (mineEnd.tv_sec - mineStart.tv_sec) * 1e6;
-    mineTime = (mineTime + (mineEnd.tv_usec - mineStart.tv_usec)) * 1e-6;
-    stringstream ss;
-    ss << setprecision(5) << mineTime;
-    string ts = ss.str();
-    return ts;
 }

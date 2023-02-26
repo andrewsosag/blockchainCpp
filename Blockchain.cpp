@@ -4,7 +4,7 @@
 // Blockchain Constructor
 Blockchain::Blockchain() {
     chain.__emplace_back(Block(0, "Genesis Block")); // place first block in first position
-    mineDifficulty = 5; // set starting mining difficulty
+    mineDifficulty = 6; // set starting mining difficulty
 }
 
 /*
