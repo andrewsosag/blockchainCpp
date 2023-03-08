@@ -4,12 +4,11 @@
 #include <vector>
 #include "Block.h"
 
-using namespace std;
-
 /*
 Blockchain Class:
-    - Constructs blockchain using immutable vector of Blocks
-    - Keeps track of increasing mining mineDifficulty
+    - Constructs blockchain using vector of Blocks
+    - 
+    - 
 */
 class Blockchain {
 public:
@@ -20,8 +19,8 @@ public:
 
 private:
     // Immutable Blockchain Data
-    int mineDifficulty;
-    vector<Block> chain; // vector of Blocks to dynamically create blockchain
+    int mineDifficulty; // set starting mining difficulty
+    std::vector<Block> chain; // vector of Blocks to dynamically create blockchain
 };
 
 #endif

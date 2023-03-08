@@ -14,4 +14,4 @@ sha256.o: sha256.cpp sha256.h
 	g++ -c sha256.cpp
 
 clean:
-	rm *.o
+	rm *.o startMining

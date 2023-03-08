@@ -10,8 +10,8 @@ Input:
     - Current Index of Blockchain
     - Current block data
 */
-Block::Block(int currentIndex, const string currentData) {
-    // Set Index and Data
+Block::Block(int currentIndex, const std::string currentData) {
+    // Set Block Index and Data
     blockIndex = currentIndex; 
     blockData = currentData;
     blockNonce = -1; // set starting nonce
@@ -21,10 +21,8 @@ Block::Block(int currentIndex, const string currentData) {
 
 /*
 Function to mine Blocks using Proof of Work
-    - Nonce is continually increased
-    - New hash is created with each nonce until
-    the new hash contains correct amount of 
-    leading zeroes for current mineDifficult
+    - Nonce is incremented until hash created with 
+        nonce contains correct amount of zeroes
 */
 void Block::MineBlock(int mineDifficulty) {
     // Create string of leading zeroes for current mineDifficulty
@@ -33,7 +31,7 @@ void Block::MineBlock(int mineDifficulty) {
         cstr[i] = '0';
     }
     cstr[mineDifficulty] = '\0';
-    string str(cstr);
+    std::string str(cstr);
 
     // Loop until correct hash is found
     do {
@@ -45,17 +43,19 @@ void Block::MineBlock(int mineDifficulty) {
     } while (blockHash.substr(0, mineDifficulty) != str);
 
     // Output publicly hash of new block
-    cout << "Block mined: " << blockHash << endl;
+    std::cout << "Block mined: " << blockHash << std::endl;
 }
 
 
 /*  
-    calculateHash loads block data into stringstream,
-    and returns data encrypted with SHA-256
+Function dumps block data into string and returns data encrypted with SHA-256
+    - Any changes in block data will entirely change hash
 */
-inline string Block::calculateHash() const {
-    stringstream blockData;
-    blockData << blockIndex << blockTime << blockData << blockNonce << prevBlockHash;
-
-    return sha256(blockData.str());
+inline std::string Block::calculateHash() const {
+    // Dump block data into string
+    std::stringstream hashString;
+    hashString << blockIndex << blockTime << blockData << blockNonce << prevBlockHash;
+    
+    // Return SHA-256 encrypted hash of string
+    return sha256(hashString.str());
 }

@@ -4,29 +4,27 @@
 #include <string>
 #include <iostream>
 
-using namespace std;
 /*
 Block Class
-    - contains immutable block data
-    - contains function for encryption with SHA-256
-    - contains function for mining blocks with Proof of Work
+    - Contains private block data (accessible through get methods)
+    - Contains function for mining blocks using Proof of Work
 */
-
 class Block {
 public:
-    Block(int indexInput, const string dataInput); // constructor
-    string prevBlockHash; // hash of previous block
-    string getHash() { return blockHash;};
+    Block(int indexInput, const std::string dataInput); // constructor
+    std::string prevBlockHash; // hash of previous block
+    std::string getHash() { return blockHash;};
+    std::string getBlockInfo; // returns public block information
     void MineBlock(int difficulty);
 private:
     // Block Data (visible from blockchain, but immutable)
     int blockIndex;
     int blockNonce;
-    string blockData;
-    string blockHash;
+    std::string blockData;
+    std::string blockHash;
     time_t blockTime; // time of mining
 
-    string calculateHash() const; // return SHA256 hash of block data
+    std::string calculateHash() const; // return SHA256 hash of block data
 };
 
 #endif

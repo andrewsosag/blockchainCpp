@@ -1,5 +1,4 @@
 # A Blockchain Using Proof of Work in C++
-A simple blockchain written in C++
 
 This is a simple blockchain written in C++, that
 uses proof of work and SHA-256 to mimic a real blockchain

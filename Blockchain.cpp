@@ -9,6 +9,7 @@ Blockchain::Blockchain() {
 
 /*
 Function adds new Blocks to Blockchain
+@param: current block
     - Stores hash of previous block in new Block
     - Mines new block using Proof of Work
     - Adds new Block to end of Blockchain
@@ -19,7 +20,11 @@ void Blockchain::addBlock(Block current) {
     chain.push_back(current); // add new Block to end of Blockchain
 }
 
-// Function returns latest Block on Blockchain
+
+/*
+Function returns last Block on Blockchain
+@return: last block in blockchain
+*/
 Block Blockchain::getLastBlock() const {
     return chain.back();
 }
